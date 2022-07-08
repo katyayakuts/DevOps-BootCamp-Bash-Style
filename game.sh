@@ -17,7 +17,8 @@ read -p "Enter your choice : " ch
 
     while [ $c -eq 0 ]; do
       x=11; r=($(shuf -i 0-9 -n 10))
-      echo "${r[@]} ";
+      
+      echo "${r[@]}" " "
 
       for i in {1..10}; do
         a[$i]=$i
