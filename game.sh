@@ -17,7 +17,8 @@ read -rp "Enter your choice : " ch
 
     while [ $c -eq 0 ]; do
       x=11;
-      r=($(shuf -i 0-9 -n 10))
+      #r=($(shuf -i 0-9 -n 10))
+      mapfile -t r < <(shuf -i 0-9 -n 10)
       
       echo "${r[@]}" " "
 
@@ -36,7 +37,7 @@ read -rp "Enter your choice : " ch
 
       if [[ ${r[$((x))-1]} -eq $n ]]; then
         echo "Great"
-        ((p=p+1))
+        ((p++))
       else
         c=1
         break
